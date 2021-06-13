@@ -113,7 +113,7 @@ exports.fetchPost = function(req, res, next) {
       });
       }
     res.json(post)
-  }).sort({time: -1}).limit(1)
+  }).sort({time: -1}).limit(6)
 }
 
 
