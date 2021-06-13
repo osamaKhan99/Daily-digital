@@ -30,32 +30,27 @@ class Welcome extends Component {
   render(){
 
     return(
-      <div>
+      <div className="home">
 
     { /*Main tab for a primary message or call to action*/ }
-    <div className="jumbotron">
-      <h1 className="display-3">Welcome!</h1>
-      <p>This is a MERN stack based fully functioning blog system. Here, you can share your experience and ideas with other people.</p>
-      <p><Link className="btn btn-primary btn-lg" to="/posts" role="button">Look the blog posts &raquo;</Link></p>
+    <div className="home_banner">
+      <div className="row">
+        <div className="col-md-6">
+          <h1 className="home_title">Where good ideas find you.</h1>
+          <p className="home_title_para">Read and share new perspectives on just about any topic. Everyone’s welcome.</p>
+          <p><Link className="btn btn-primary btn-lg home_btn" to="/signup" role="button">Get Started &raquo;</Link></p>
+        </div>
+        <div className="col-md-6 home_banner_image">
+        <img src="media/image1.png" height="300px" width="60%" alt="home_banner_image"/>
+        </div>
+      </div>
     </div>
 
     { /*Example row of columns*/ }
-    <div className="row text-justify">
-      <div className="col-md-4">
-        <h2>Front-end</h2>
-        <p>The front-end client is built as a simple-page-application using React. Besides, React-Router is used for navigation. Bootstrap 4 is used for page styling.</p>
-      </div>
-      <div className="col-md-4">
-        <h2>Back-end</h2>
-        <p>The back-end server is built with Express.js and Node.js, which provides completed REST APIs for data interaction. Passport.js is used as an authentication middleware in the sever. JSON Web Token (JWT) is used for signing in user and making authenticated requests.</p>
-      </div>
-      <div className="col-md-4">
-        <h2>Database</h2>
-        <p>MongoDB is used as the back-end database, which include different data models/schemas (i.e., User, Post and Comment). Mongoose is used to access the MongoDB for CRUD actions (create, read, update and delete).</p>
-      </div>
+    <div className="latest_post_title">
+      <h1>Latest Post</h1>
     </div>
     <div className="post">
-      <h1>Latest Post</h1>
         {/* <Link className="btn btn-primary mb-5" to={'/posts/new'}>Publish A New Post</Link> */}
         {_.map(this.props.posts, post => {
           console.log("latest map function")

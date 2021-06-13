@@ -29,10 +29,10 @@ class Header extends Component {
       return (
         <ul className="navbar-nav">
           <li className="nav-item" key={1}>
-            <Link className="btn btn-primary" to="/signup">Sign Up</Link>
+            <Link className="nav-link" to="/signup">Sign Up</Link>
           </li>
           <li className="nav-item" key={2}>
-            <Link className="btn btn-secondary ml-sm-2" to="/signin">Sign In</Link>
+            <Link className="btn btn-secondary btn_sign_in ml-sm-2" to="/signin">Get Started</Link>
           </li>
         </ul>
       );
@@ -41,7 +41,7 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-inverse bg-inverse navbar-toggleable-md fixed-top">
+      <nav className="navbar navbar-inverse navbar-toggleable-md fixed-top navbar">
         <div className="container">
           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleContainer" aria-controls="navbarsExampleContainer" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
@@ -53,14 +53,7 @@ class Header extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/posts">Posts</Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" target="_blank" rel="noopener noreferrer" href="https://github.com/haichao-yu/react-redux-blog">GitHub</a>
-              </li>
             </ul>
-            <form className="form-inline my-2 my-md-0">
-              <input className="form-control mr-sm-2" type="text" placeholder="Search Post" />
-              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
             <div className="ml-auto">
               {this.renderLinks()}
             </div>

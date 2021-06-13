@@ -35,7 +35,7 @@ ReactDOM.render(
     <Router>
       <div>
         <Header />
-        <div className="container" id="content">
+        <div id="content">
           <Switch>
             <Route exact path='/' component={Welcome} />
             <Route path='/signin' component={Signin} />

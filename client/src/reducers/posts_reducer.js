@@ -5,6 +5,7 @@ import {
   FETCH_POST,
   UPDATE_POST,
   DELETE_POST,
+  LATEST_POSTS,
 } from '../actions/types';
 
 export default function(state = {}, action) {
