@@ -97,6 +97,28 @@ exports.fetchPost = function(req, res, next) {
 };
 
 /**
+ * fetch latest post
+ * 
+ * @param  req 
+ * @param  res 
+ * @param  next 
+ */
+
+ exports.fetchLatestPost = function(req, res, next){
+  Post.find({}, function(err,post){
+    if(err){
+      console.log(err)
+      return res.status(400).json({
+        message: "Error ! Could not find lastets post"
+      });
+      }
+    res.json(post)
+  }).sort({time: -1}).limit(1)
+}
+
+
+
+/**
  * Update
  *
  * @param req

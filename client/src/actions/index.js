@@ -10,6 +10,7 @@ import {
 
   FETCH_POSTS,
   CREATE_POST,
+  LATEST_POSTS,
   FETCH_POST,
   UPDATE_POST,
   DELETE_POST,
@@ -216,6 +217,19 @@ export function fetchPost(id) {
     });
   }
 }
+
+export function latestPosts() {
+
+  return function(dispatch){
+    axios.get(`${ROOT_URL}/latest`).then((response)=>{
+    dispatch({
+      type: LATEST_POSTS,
+      payload: response.data
+    })
+  })
+}
+}
+
 
 export function updatePost({ _id, title, categories, content }, onEditSuccess, historyReplace) {
 

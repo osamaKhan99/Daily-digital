@@ -20,6 +20,8 @@ export default function(state = {}, action) {
       return { ...state, [action.payload._id]: action.payload };
     case DELETE_POST:
       return _.omit(state, action.payload);
+    case LATEST_POSTS:
+      return _.mapKeys(action.payload, '_id');
     default:
       return state;
   }

@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
+import _ from 'lodash';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { latestPosts } from '../actions/index';
 
-export default () => (
-  <div>
+class Welcome extends Component {
+
+  componentDidMount(){
+    this.props.latestPosts();
+  }
+
+  renderPostSummary(post){
+    return (
+      <div key={post._id}>
+        <h3>
+          <Link className="link-without-underline" to={`/posts/${post._id}`}>
+            {post.title}
+          </Link>
+        </h3>
+        <span className="span-with-margin text-grey"> • </span>
+        <span className="span-with-margin text-grey">{post.authorName}</span>
+        <span className="span-with-margin text-grey"> • </span>
+        <span className="span-with-margin text-grey">{new Date(post.time).toLocaleString()}</span>
+        <hr />
+      </div>
+    );
+  }
+  
+  render(){
+
+    return(
+      <div>
 
     { /*Main tab for a primary message or call to action*/ }
     <div className="jumbotron">
@@ -26,6 +54,25 @@ export default () => (
         <p>MongoDB is used as the back-end database, which include different data models/schemas (i.e., User, Post and Comment). Mongoose is used to access the MongoDB for CRUD actions (create, read, update and delete).</p>
       </div>
     </div>
-
+    <div className="post">
+      <h1>Latest Post</h1>
+        {/* <Link className="btn btn-primary mb-5" to={'/posts/new'}>Publish A New Post</Link> */}
+        {_.map(this.props.posts, post => {
+          console.log("latest map function")
+          return this.renderPostSummary(post);
+        })}
+      </div>
   </div>
-);
+    )
+  }
+
+}
+
+function mapStateToProps(state){
+  return {
+    posts: state.posts
+  }
+}
+
+
+export default connect(mapStateToProps, { latestPosts })(Welcome);

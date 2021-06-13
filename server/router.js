@@ -27,6 +27,8 @@ app.get('/api/', requireAuth, function(req, res) {
 
   app.get('/api/posts', Blog.fetchPosts);
 
+  app.get('/api/latest' , Blog.fetchLatestPost);
+
   app.post('/api/posts', requireAuth, Blog.createPost);
 
   app.get('/api/posts/:id', Blog.fetchPost);
