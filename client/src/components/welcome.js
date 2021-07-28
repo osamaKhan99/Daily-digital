@@ -41,17 +41,18 @@ class Welcome extends Component {
           <p><Link className="btn btn-primary btn-lg home_btn" to="/signup" role="button">Get Started &raquo;</Link></p>
         </div>
         <div className="col-md-6 home_banner_image">
-        <img src="media/image1.png" height="300px" width="60%" alt="home_banner_image"/>
+        <img src="media/image1.png" height="400px" width="60%" alt="home_banner_image"/>
         </div>
       </div>
     </div>
 
     { /*Example row of columns*/ }
     <div className="latest_post_title">
-      <h1>Latest Post</h1>
+      
     </div>
     <div className="post">
         {/* <Link className="btn btn-primary mb-5" to={'/posts/new'}>Publish A New Post</Link> */}
+        <h1>Latest Post</h1>
         {_.map(this.props.posts, post => {
           console.log("latest map function")
           return this.renderPostSummary(post);

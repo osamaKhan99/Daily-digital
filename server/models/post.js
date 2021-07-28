@@ -8,6 +8,7 @@ const postSchema = new Schema({
   authorId: String,
   authorName: String,
   time: Date,
+  featureImage : String,
 });
 
 const ModelClass = mongoose.model('post', postSchema);

@@ -5,13 +5,28 @@ import { createPost } from '../../actions';
 
 class PostNew extends Component {
 
-  handleFormSubmit({ title, categories, content }) {
-    this.props.createPost({ title, categories, content }, (path) => { 
+  handleFormSubmit({ title, categories, content, featureImage }) {
+    this.props.createPost({ title, categories, content, featureImage }, (path) => { 
       this.props.history.push(path);
     }, (path, state) => {
       this.props.history.replace(path, state);
     });
   }
+
+
+ renderFeatureImage = (field) => (
+    <fieldset>
+      <label>{field.label}</label>
+      <input
+      className="form-control"
+      {...field.input}
+      type={field.type}
+      placeholder={field.placeholder}
+      required={field.required? 'required' : ''}
+      disabled={field.disabled? 'disabled' : ''}
+      />
+    </fieldset>
+ )
 
   renderInput = (field) => (
     <fieldset className="form-group">
@@ -59,6 +74,7 @@ class PostNew extends Component {
         <h2 className="mb-5">New Post</h2>
         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
           <Field name="title" component={this.renderInput} type="text" label="Title:" placeholder="Enter your title" required={true} />
+          <Field name="featureImage" component={this.renderFeatureImage} type="file" label="Feature Image:" placeholder="Upload an Image" required={true} />
           <Field name="categories" component={this.renderInput} type="text" label="Categories:" placeholder="Enter your categories, use ',' to separate them" required={true} />
           <Field name="content" component={this.renderTextEditor} label="Content:" />
           <button action="submit" className="btn btn-primary">Publish</button>

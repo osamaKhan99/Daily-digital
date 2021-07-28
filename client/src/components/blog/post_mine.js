@@ -19,6 +19,7 @@ class PostMine extends Component {
   renderPostSummary(post) {
     return (
       <div key={post._id}>
+        <div>{post.featureImage}</div>
         <h3>
           <Link className="link-without-underline" to={`/posts/${post._id}`}>
             {post.title}

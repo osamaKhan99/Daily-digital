@@ -180,11 +180,12 @@ export function fetchPosts() {
   }
 }
 
-export function createPost({ title, categories, content }, historyPush, historyReplace) {
+export function createPost({ title, categories, content, featureImage }, historyPush, historyReplace) {
 
   return function(dispatch) {
     axios.post(`${ROOT_URL}/posts`, {
       title,
+      featureImage,
       categories,
       content,
     }, {

@@ -21,7 +21,7 @@ body {
 -------------------------------------------------- */
 
 #content {
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .form-signin {
@@ -76,7 +76,8 @@ body {
 .home_banner{
   background-color: #ffc017;
   width: 100%;
-  margin: 0;
+  height: 500px;
+  margin: 0 auto;
   padding: 50px 80px;
   border-bottom: 1px solid #000;
 }
@@ -109,6 +110,9 @@ body {
   background-color: #ffc017;
   height: 80px;
   border-bottom: 1px solid #000;
+}
+.navbar-brand{
+  font-size: 2rem;
 }
 .navbar-inverse .navbar-brand{
   color: #000;
