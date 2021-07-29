@@ -4,6 +4,8 @@ const Post = require('../models/post');
 const Comment = require('../models/comment');
 
 
+
+
 /**
  * Get a list of posts
  *
@@ -39,10 +41,11 @@ exports.fetchPosts = function(req, res, next) {
  */
 exports.createPost = function(req, res, next) {
 
+  
+  const url = req.protocol + "://" + req.get("host")
   const user = req.user;
   const title = req.body.title;
   const categories = req.body.categories;
-  const featureImage = req.body.featureImage;
   const content = req.body.content;
   const authorId = user._id;
   const authorName = user.firstName + ' ' + user.lastName;
@@ -58,7 +61,7 @@ exports.createPost = function(req, res, next) {
     categories: _.uniq(categories.split(',').map((item) => item.trim())),  
     content: content,
     authorId: authorId,
-    featureImage: featureImage,
+    featureImage: url + "/images/",
     authorName: authorName,
     time: time,
   });
