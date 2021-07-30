@@ -48,12 +48,23 @@ class Welcome extends Component {
     </div>
 
     { /*Example row of columns*/ }
-    <div className="latest_post_title">
-      
-    </div>
+   
     <div className="post">
         {/* <Link className="btn btn-primary mb-5" to={'/posts/new'}>Publish A New Post</Link> */}
-        <h1>Latest Post</h1>
+        <div className="container">
+        <h1 className="latest_post_title"> Latest Post</h1>
+          <div className="row blog"> 
+            <div className="blog_title col-sm-8 lg-8 xl-8">
+              <h4 className="author">Written By Author</h4>
+              <h3>Social Media, Memes, and the Spread of Misinformation</h3>
+              <p>Americans must rise above confirmation bias, groupthink, and tribalism</p>
+              <h4 className="author">Published on Date</h4>
+            </div>
+            <div className="blog_pic col-sm-4 lg-4 xl-4">
+              <img src="media/blog1.jpeg" height="150px" width="200px"></img>
+            </div>
+          </div>
+        </div>
         {_.map(this.props.posts, post => {
           console.log("latest map function")
           return this.renderPostSummary(post);
