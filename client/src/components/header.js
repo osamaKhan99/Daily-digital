@@ -43,7 +43,7 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-inverse navbar-toggleable-md fixed-top navbar">
         <div className="container">
-          <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleContainer" aria-controls="navbarsExampleContainer" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarsExampleContainer" aria-controls="navbarsExampleContainer" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
           </button>
           <Link className="navbar-brand" to="/">Daily Digital</Link>

@@ -125,13 +125,34 @@ body {
 }
 .navbar-inverse .navbar-nav .nav-link{
   color: #000;
-  float: left;
+  /* float: left; */
 }
-.navbar-inverse .navbar-nav .nav-link:hover{
+
+
+.navbar-inverse .navbar-nav{
   color: rgb(255, 255, 255);
 }
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .home_banner_image img{
+    display: none;
+  }
+  .navbar-brand{
+    margin-left: -220px;
+  }
+  .navbar-toggler-left{
+    left: 10rem;
+    top: 10px;
+  }
+  .collapse.show {
+    background-color: #fff;
+    padding: 10px;
+  }
+
+}
+
 .collapse.show {
-  background-color: #ffdf4e;
+  background-color: #fff;
   padding: 10px;
 }
 .btn_sign_in{
