@@ -13,6 +13,7 @@ class Welcome extends Component {
   renderPostSummary(post){
     return (
       <div key={post._id}>
+        <img src={post.featureImage}/>
         <h3>
           <Link className="link-without-underline" to={`/posts/${post._id}`}>
             {post.title}

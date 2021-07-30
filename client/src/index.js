@@ -21,6 +21,7 @@ import PostMine from './components/blog/post_mine';
 
 import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
+import About from './components/about';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 const store = createStoreWithMiddleware(reducers);
@@ -38,6 +39,7 @@ ReactDOM.render(
         <div id="content">
           <Switch>
             <Route exact path='/' component={Welcome} />
+            <Route exact path='/about-us' component={About} />
             <Route path='/signin' component={Signin} />
             <Route path='/signup' component={Signup} />
             <Route path="/profile" component={RequireAuth(Profile)} />

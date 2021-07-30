@@ -141,3 +141,74 @@ body {
   margin-top: -20px;
   padding: 0;
 }
+
+/* About Us */
+
+.main{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: #ffc017;
+  
+}
+.right{
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+iframe{
+  border: none;
+  width: 100%;
+}
+.left{
+  padding: 95px;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+}
+.left p {
+  font-size: 25px;
+  
+}
+.heading{
+  font-size: 80px;
+}
+
+.intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  line-height:4vmax;
+  margin: 40px;
+  padding: 80px;
+}
+.team{
+  display: flex;
+  margin: 40px;
+  padding: 30px;
+  justify-content: space-around;
+}
+.intro-box{
+  border: none;
+  border-radius: 10%;
+  padding: 30px;
+  text-align: center;
+  width: 40%;
+  box-shadow: 4px 10px 47px 0px rgba(212,206,206,0.7);
+-webkit-box-shadow: 4px 10px 47px 0px rgba(212,206,206,0.7);
+-moz-box-shadow: 4px 10px 47px 0px rgba(212,206,206,0.7);
+}
+.avatar{
+  display: block;
+  width: 200px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.team-heading{
+  text-align: center;
+}
