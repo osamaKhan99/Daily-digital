@@ -4,6 +4,17 @@ const Post = require('../models/post');
 const Comment = require('../models/comment');
 
 
+function removeTags(str) {
+  if ((str===null) || (str===''))
+      return false;
+  else
+      str = str.toString();
+        
+  // Regular expression to identify HTML tags in 
+  // the input string. Replacing the identified 
+  // HTML tag with a null string.
+  return str.replace( /(<([^>]+)>)/ig, '');
+}
 
 
 /**
@@ -55,11 +66,13 @@ exports.createPost = function(req, res, next) {
       message: 'Title, categories and content are all required.'
     });
   }
+ 
+  
 
   const post = new Post({
     title: title,
     categories: _.uniq(categories.split(',').map((item) => item.trim())),  
-    content: content,
+    content: removeTags(content),
     authorId: authorId,
     featureImage: url + "/images/",
     authorName: authorName,

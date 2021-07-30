@@ -14,7 +14,7 @@ class PostBody extends Component {
 
     return (
       <div>
-        <div>{post.featureImage}</div>
+         <img src={post.featureImage} height="300px" width="600px"></img>
         <h3>{post.title}</h3>
         {this.renderTags(post.categories)}
         <span className="span-with-margin"> • </span>
